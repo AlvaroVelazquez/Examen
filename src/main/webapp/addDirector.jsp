@@ -14,7 +14,7 @@ List<Pelicula> listAllDirectores = (List<Pelicula>)request.getAttribute("listAll
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Index page</title>
+<title>Adding directors</title>
 </head>
 <body>
 	<form action="/director" method="post">
@@ -27,9 +27,7 @@ List<Pelicula> listAllDirectores = (List<Pelicula>)request.getAttribute("listAll
 		<tr>
 			<td>Cod</td>
 			<td>Title</td>
-			<td>codDirector</td>
-			<td>Eliminar</td>
-		</tr>
+			<td></td>
 	</thead>
 	<tbody>
 		<c:forEach var="director" items="${listAllDirectores}">

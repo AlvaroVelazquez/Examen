@@ -7,12 +7,17 @@ import javax.servlet.http.HttpServletRequest;
 import es.salesianos.model.Actor;
 import es.salesianos.model.Director;
 import es.salesianos.model.Pelicula;
+import es.salesianos.model.assembler.DirectorAssembler;
 import es.salesianos.repository.Repository;
 
 public class Service {
 
 
 	private Repository repository = new Repository();
+	
+	public List<Actor> filterAllActor(int beginDate, int endDate) {
+		return repository.filterAllActor(beginDate, endDate);
+	}
 
 	public List<Actor> selectAllActor() {
 			return repository.selectAllActor();
@@ -47,5 +52,7 @@ public class Service {
 	public void delete(Director director) {
 		repository.delete(director);
 	}
-
+	public Director assembleDirectorFromRequest(HttpServletRequest req) {
+		return DirectorAssembler.assembleDirectorFrom(req);
+	}
 }

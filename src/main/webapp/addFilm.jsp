@@ -1,26 +1,27 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	
 <%@ page import="java.io.*,java.util.*,es.salesianos.model.*" %>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-	
 
-<%
-List<Pelicula> listAllDirectores = (List<Pelicula>)request.getAttribute("listAllDirectores");
-%>
-	
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Index page</title>
+<title>Adding films</title>
 </head>
 <body>
-	<form action="/director" method="post">
-		<span>name:</span> <input type="text" name="name"> <br />
+
+<%
+List<Pelicula> listAllPeliculas = (List<Pelicula>)request.getAttribute("listAllPeliculas");
+%>
+	<form action="/pelicula" method="post">
+		<span>title:</span> <input type="text" name="title"> <br />
 		<input type="submit">
 	</form>
+	
+	
+	
 	
 <table border="1">
 	<thead>
@@ -32,15 +33,15 @@ List<Pelicula> listAllDirectores = (List<Pelicula>)request.getAttribute("listAll
 		</tr>
 	</thead>
 	<tbody>
-		<c:forEach var="director" items="${listAllDirectores}">
+		<c:forEach var="pelicula" items="${listAllPeliculas}">
 			<tr>
-				<td><c:out value="${director.cod}"/> </td>
-				<td><c:out value="${director.nombre}"/> </td>
-				<td><a href="/director?cod=${director.cod}">Eliminar</a> </td>
+				<td><c:out value="${pelicula.cod}"/> </td>
+				<td><c:out value="${pelicula.title}"/> </td>
+				<td><c:out value="${pelicula.codDirector}"/> </td>
+				<td><a href="/pelicula?cod=${pelicula.cod}">Eliminar</a> </td>
 	    	</tr>
 		</c:forEach>
 	</tbody>
-</table>	
-	
+</table>
 </body>
 </html>

@@ -9,7 +9,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Adding actors</title>
+<title>Adding actors </title>
 </head>
 <body>
 
@@ -18,7 +18,7 @@
 	%>
 
 	<form action="/actor" method="post">
-		<span>name:</span> <input type="text" name="nombre">  <span>Year of birth:</span>
+		<span>name:</span> <input type="text" name="nombre"> <br /> <span>year:</span>
 		<input type="text" name="year"> <br /> <input type="submit">
 	</form>
 	<br />
@@ -36,9 +36,9 @@
 		<thead>
 			<tr>
 				<td>Cod</td>
-				<td>Title</td>
-				<td>codDirector</td>
-				<td>Eliminar</td>
+				<td>Name</td>
+				<td>Date</td>
+				<td></td>
 			</tr>
 		</thead>
 		<tbody>

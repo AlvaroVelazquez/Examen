@@ -3,6 +3,7 @@
 /home/alvaro/Examen/src/main/java/es/salesianos/repository/FilmRepository.java
 /home/alvaro/Examen/src/main/java/es/salesianos/repository/DirectorRepository.java
 /home/alvaro/Examen/src/main/java/es/salesianos/model/Actor.java
+/home/alvaro/Examen/src/main/java/es/salesianos/servlet/SearchActorServlet.java
 /home/alvaro/Examen/src/main/java/es/salesianos/model/PeliculaActor.java
 /home/alvaro/Examen/src/main/java/es/salesianos/service/FilmService.java
 /home/alvaro/Examen/src/main/java/es/salesianos/connection/AbstractConnection.java

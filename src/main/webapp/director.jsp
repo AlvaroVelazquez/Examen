@@ -28,7 +28,7 @@
 		<thead>
 			<tr>
 				<td>Cod</td>
-				<td>Title</td>
+				<td>Name</td>
 				<td></td>
 
 			</tr>

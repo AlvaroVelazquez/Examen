@@ -35,13 +35,21 @@
 		<servlet-class>es.salesianos.servlet.FillPeliculaActorServlet
 		</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>SearchActorServlet</servlet-name>
+		<servlet-class>es.salesianos.servlet.SearchActorServlet
+		</servlet-class>
+	</servlet>
 
 
 
 
 
 
-
+	<servlet-mapping>
+		<servlet-name>SearchActorServlet</servlet-name>
+		<url-pattern>/searchActor</url-pattern>
+	</servlet-mapping>
 
 	<servlet-mapping>
 		<servlet-name>FillPeliculaActorServlet</servlet-name>

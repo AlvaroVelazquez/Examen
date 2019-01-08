@@ -9,29 +9,24 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Adding actors</title>
 </head>
 <body>
 
 	<%
 		List<Actor> listAllActores = (List<Actor>) request.getAttribute("listAllActores");
+		request.getAttribute("codPelicula");
 	%>
-
-	<form action="/actor" method="post">
-		<span>name:</span> <input type="text" name="nombre"> <span>Year
-			of birth:</span> <input type="text" name="year"> <br /> <input
-			type="submit">
+	<form action="/searchActor" method="get">
+		<span>From:</span> <input type="text" name="From"> <span>To:</span>
+		<input type="text" name="To"> <input type="submit">
 	</form>
-	<br />
-	<br />
-	<br />
+
 	<table border="1">
 		<thead>
 			<tr>
-				<td>Cod</td>
-				<td>Name</td>
-				<td>Year of Birth</td>
-				<td></td>
+				<td>Cod Actor</td>
+				<td>name</td>
+				<td>year</td>
 			</tr>
 		</thead>
 		<tbody>
@@ -40,7 +35,6 @@
 					<td><c:out value="${actor.cod}" /></td>
 					<td><c:out value="${actor.nombre}" /></td>
 					<td><c:out value="${actor.year}" /></td>
-					<td><a href="/actor?cod=${actor.cod}">Delete</a></td>
 				</tr>
 			</c:forEach>
 		</tbody>
@@ -49,6 +43,8 @@
 	<div>
 		<a href="index.jsp">Return to index</a>
 	</div>
+</body>	
+
 
 </body>
 </html>

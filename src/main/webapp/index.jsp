@@ -20,7 +20,10 @@
 		<a href="/filmactor">Associate films with actors</a>
 	</div>
 	<div>
-		<a href="/character">Film actors (Characters)</a>
+		<a href="/searchActor">Search Actors by Date</a>
+	</div>
+	<div>
+		<a href="/characters">Film actors (Characters)</a>
 	</div>
 	<div>
 		<a href="/directoractor">Directors by actors</a>

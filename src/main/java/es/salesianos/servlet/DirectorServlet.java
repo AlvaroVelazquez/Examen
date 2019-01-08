@@ -10,13 +10,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import es.salesianos.model.Director;
-import es.salesianos.service.Service;
+import es.salesianos.service.DirectorService;
 
 public class DirectorServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 
-	private Service service = new Service();
+	private DirectorService service = new DirectorService();
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -45,7 +45,7 @@ public class DirectorServlet extends HttpServlet {
 	}
 
 	protected void redirect(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
-		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/addDirector.jsp");
+		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/director.jsp");
 		dispatcher.forward(req, resp);
 	}
 }

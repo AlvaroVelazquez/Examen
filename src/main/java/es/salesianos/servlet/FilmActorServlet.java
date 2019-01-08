@@ -10,50 +10,45 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import es.salesianos.model.Actor;
-import es.salesianos.model.assembler.ActorAssembler;
-import es.salesianos.service.ActorService;
+import es.salesianos.model.Pelicula;
+import es.salesianos.model.assembler.PeliculaAssembler;
+import es.salesianos.service.FilmService;
 
-public class ActorServlet extends HttpServlet {
+
+public class FilmActorServlet extends HttpServlet {
+
 
 	private static final long serialVersionUID = 1L;
 
-	private ActorService service = new ActorService();
+	private FilmService service = new FilmService();
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		Actor actor = ActorAssembler.assembleActorFrom(req);
-		service.insert(actor);
+		Pelicula pelicula = PeliculaAssembler.assemblePeliculaFrom(req);
+		service.insert(pelicula);
 		doAction(req, resp);
 	}
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String codString = req.getParameter("cod");
-		if (codString != null) {
-			Actor actor = new Actor();
+		if(null != codString) {
+			Pelicula pelicula = new Pelicula();
 			int cod = Integer.parseInt(codString);
-			actor.setCod(cod);
-			service.delete(actor);
+			pelicula.setCod(cod);
+			service.delete(pelicula);
 		}
 		doAction(req, resp);
 	}
 
 	private void doAction(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
-		String parameter = req.getParameter("From");
-		if (parameter != null) {
-			int From = Integer.parseInt(req.getParameter("From"));
-			int To = Integer.parseInt(req.getParameter("To"));
-			List<Actor> listAllActores = service.filterAllActor(From, To);
-			req.setAttribute("listAllActores", listAllActores);
-		} else {
-			List<Actor> listAllActores = service.selectAllActor();
-			req.setAttribute("listAllActores", listAllActores);
-		}
+		List<Pelicula> selectAllPelicula = service.selectAllPelicula();
+		req.setAttribute("listAllPeliculas", selectAllPelicula);
 		redirect(req, resp);
 	}
 
 	protected void redirect(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
-		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/actor.jsp");
+		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/filmactors.jsp");
 		dispatcher.forward(req, resp);
 	}
 }

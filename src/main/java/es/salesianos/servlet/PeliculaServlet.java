@@ -9,18 +9,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import es.salesianos.model.Actor;
 import es.salesianos.model.Pelicula;
 import es.salesianos.model.assembler.PeliculaAssembler;
-import es.salesianos.service.Service;
-import es.salesianos.service.Service;
+import es.salesianos.service.FilmService;
 
 public class PeliculaServlet extends HttpServlet {
 
-
 	private static final long serialVersionUID = 1L;
 
-	private Service service = new Service();
+	private FilmService service = new FilmService();
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -32,8 +29,8 @@ public class PeliculaServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String codString = req.getParameter("cod");
-		
-		if(null != codString) {
+
+		if (null != codString) {
 			Pelicula pelicula = new Pelicula();
 			int cod = Integer.parseInt(codString);
 			pelicula.setCod(cod);
@@ -49,7 +46,7 @@ public class PeliculaServlet extends HttpServlet {
 	}
 
 	protected void redirect(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
-		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/addFilm.jsp");
+		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/pelicula.jsp");
 		dispatcher.forward(req, resp);
 	}
 }

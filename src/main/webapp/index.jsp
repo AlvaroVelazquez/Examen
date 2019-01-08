@@ -1,20 +1,29 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Inicio</title>
+<title>Index</title>
 </head>
 <body>
 	<div>
-		<a href="/actor">Quiero añadir un nuevo actor</a>
+		<a href="/actor">Actors page</a>
 	</div>
 	<div>
-		<a href="/director">Quiero añadir un nuevo director</a>
+		<a href="/director">Directors page</a>
 	</div>
 	<div>
-		<a href="/pelicula">Quiero añadir una nueva pelicula</a>
+		<a href="/pelicula">Films page</a>
+	</div>
+	<div>
+		<a href="/filmactor">Associate films with actors</a>
+	</div>
+	<div>
+		<a href="/character">Film actors</a>
+	</div>
+	<div>
+		<a href="/directoractor">Directors by actors</a>
 	</div>
 </body>
 </html>

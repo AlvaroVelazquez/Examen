@@ -18,17 +18,15 @@
 	%>
 
 	<form action="/actor" method="post">
-		<span>name:</span> <input type="text" name="nombre">  <span>Year of birth:</span>
-		<input type="text" name="year"> <br /> <input type="submit">
+		<span>name:</span> <input type="text" name="nombre"> <span>Year
+			of birth:</span> <input type="text" name="year"> <br /> <input
+			type="submit">
 	</form>
 	<br />
 
 	<form action="/actor" method="get">
-		<span>De:</span>
-		<input type="text" name="From">
-		<span>Hasta:</span>
-		<input type="text" name="To">
-		<input type="submit">
+		<span>From:</span> <input type="text" name="From"> <span>To:</span>
+		<input type="text" name="To"> <input type="submit">
 	</form>
 	<br />
 	<br />
@@ -38,7 +36,7 @@
 				<td>Cod</td>
 				<td>Title</td>
 				<td>codDirector</td>
-				<td>Eliminar</td>
+				<td></td>
 			</tr>
 		</thead>
 		<tbody>
@@ -47,12 +45,15 @@
 					<td><c:out value="${actor.cod}" /></td>
 					<td><c:out value="${actor.nombre}" /></td>
 					<td><c:out value="${actor.year}" /></td>
-					<td><a href="/actor?cod=${actor.cod}">Eliminar</a></td>
+					<td><a href="/actor?cod=${actor.cod}">Delete</a></td>
 				</tr>
 			</c:forEach>
 		</tbody>
 	</table>
-
+	<br>
+	<div>
+		<a href="index.jsp">Return to index</a>
+	</div>
 
 </body>
 </html>

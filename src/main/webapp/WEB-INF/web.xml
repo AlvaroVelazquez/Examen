@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_3_1.xsd"
-    version="3.1">
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_3_1.xsd"
+	version="3.1">
 	<display-name>Archetype Created Web Application</display-name>
 	<servlet>
 		<servlet-name>ActorServlet</servlet-name>
@@ -15,6 +16,18 @@
 		<servlet-name>DirectorServlet</servlet-name>
 		<servlet-class>es.salesianos.servlet.DirectorServlet</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>FilmActorServlet</servlet-name>
+		<servlet-class>es.salesianos.servlet.FilmActorServlet</servlet-class>
+	</servlet>
+
+
+
+
+	<servlet-mapping>
+		<servlet-name>FilmActorServlet</servlet-name>
+		<url-pattern>/filmactor</url-pattern>
+	</servlet-mapping>
 
 	<servlet-mapping>
 		<servlet-name>ActorServlet</servlet-name>
@@ -25,8 +38,8 @@
 		<servlet-name>PeliculaServlet</servlet-name>
 		<url-pattern>/pelicula</url-pattern>
 	</servlet-mapping>
-	
-		<servlet-mapping>
+
+	<servlet-mapping>
 		<servlet-name>DirectorServlet</servlet-name>
 		<url-pattern>/director</url-pattern>
 	</servlet-mapping>

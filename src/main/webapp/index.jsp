@@ -20,7 +20,7 @@
 		<a href="/filmactor">Associate films with actors</a>
 	</div>
 	<div>
-		<a href="/character">Film actors</a>
+		<a href="/character">Film actors (Characters)</a>
 	</div>
 	<div>
 		<a href="/directoractor">Directors by actors</a>

@@ -20,9 +20,43 @@
 		<servlet-name>FilmActorServlet</servlet-name>
 		<servlet-class>es.salesianos.servlet.FilmActorServlet</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>AssociateFilmServlet</servlet-name>
+		<servlet-class>es.salesianos.servlet.AssociateFilmServlet
+		</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>AssociateFilmServlet</servlet-name>
+		<servlet-class>es.salesianos.servlet.AssociateFilmServlet
+		</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>FillPeliculaActorServlet</servlet-name>
+		<servlet-class>es.salesianos.servlet.FillPeliculaActorServlet
+		</servlet-class>
+	</servlet>
 
 
 
+
+
+
+
+
+	<servlet-mapping>
+		<servlet-name>FillPeliculaActorServlet</servlet-name>
+		<url-pattern>/fillPeliculaActor</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>AssociateFilmServlet</servlet-name>
+		<url-pattern>/associateFilm</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>AssociateFilmServlet</servlet-name>
+		<url-pattern>/associateFilm</url-pattern>
+	</servlet-mapping>
 
 	<servlet-mapping>
 		<servlet-name>FilmActorServlet</servlet-name>

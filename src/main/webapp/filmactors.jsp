@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ page import="java.io.*,java.util.*,es.salesianos.model.*" %>
+<%@ page import="java.io.*,java.util.*,es.salesianos.model.*"%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
@@ -12,29 +12,33 @@
 </head>
 <body>
 
-<%
-List<Pelicula> listAllPeliculas = (List<Pelicula>)request.getAttribute("listAllPeliculas");
-%>
-	
-	
-	
-<table border="1">
-	<thead>
-		<tr>
-			<td>Cod</td>
-			<td>Title</td>
-			<td>Associate Actors</td>
-		</tr>
-	</thead>
-	<tbody>
-		<c:forEach var="pelicula" items="${listAllPeliculas}">
+	<%
+		List<Pelicula> listAllPeliculas = (List<Pelicula>) request.getAttribute("listAllPeliculas");
+	%>
+
+
+
+	<table border="1">
+		<thead>
 			<tr>
-				<td><c:out value="${pelicula.cod}"/> </td>
-				<td><c:out value="${pelicula.title}"/> </td>
-				<td><a href="/codFilm?cod=${pelicula.cod}">Associate</a></td>
-	    	</tr>
-		</c:forEach>
-	</tbody>
-</table>
+				<td>Cod</td>
+				<td>Title</td>
+				<td>Associate Actors</td>
+			</tr>
+		</thead>
+		<tbody>
+			<c:forEach var="pelicula" items="${listAllPeliculas}">
+				<tr>
+					<td><c:out value="${pelicula.cod}" /></td>
+					<td><c:out value="${pelicula.title}" /></td>
+					<td><a href="/associateFilm?cod=${pelicula.cod}">Associate</a></td>
+				</tr>
+			</c:forEach>
+		</tbody>
+	</table>
+	<br>	
+	<div>
+		<a href="index.jsp">Return to index</a>
+	</div>
 </body>
 </html>

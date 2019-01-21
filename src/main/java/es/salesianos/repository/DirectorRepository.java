@@ -7,12 +7,13 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+
 import es.salesianos.connection.AbstractConnection;
 import es.salesianos.connection.H2Connection;
-import es.salesianos.model.Actor;
 import es.salesianos.model.Director;
 
 public class DirectorRepository {
+
 	private static final String jdbcUrl = "jdbc:h2:file:./src/main/resources/test";
 	AbstractConnection manager = new H2Connection();
 
@@ -21,16 +22,15 @@ public class DirectorRepository {
 		PreparedStatement preparedStatement = null;
 		try {
 			preparedStatement = conn.prepareStatement("INSERT INTO DIRECTOR (name)" + "VALUES (?)");
-			preparedStatement.setString(1, director.getNombre());
+			preparedStatement.setString(1, director.getName());
 			preparedStatement.executeUpdate();
 		} catch (SQLException e) {
-			e.printStackTrace();
+
 			throw new RuntimeException(e);
 		} finally {
 			manager.close(preparedStatement);
 			manager.close(conn);
 		}
-
 	}
 
 	public void delete(Director director) {
@@ -41,37 +41,60 @@ public class DirectorRepository {
 			preparedStatement.setInt(1, director.getCod());
 			preparedStatement.executeUpdate();
 		} catch (SQLException e) {
-			e.printStackTrace();
 			throw new RuntimeException(e);
 		} finally {
 			manager.close(preparedStatement);
 			manager.close(conn);
 		}
-
 	}
 
 	public List<Director> selectAllDirector() {
 		Connection conn = manager.open(jdbcUrl);
 		PreparedStatement preparedStatement = null;
-		List<Director> list = new ArrayList<Director>();
+		List<Director> listDirector = new ArrayList<Director>();
 		try {
 			preparedStatement = conn.prepareStatement("SELECT * FROM DIRECTOR");
 			ResultSet resultSet = preparedStatement.executeQuery();
 			while (resultSet.next()) {
-				Actor director = new Actor();
-				director.setCod(resultSet.getInt(1));
-				director.setNombre(resultSet.getString(2));
-				list.add(director);
+				Director directorfromDataBase = new Director();
+				directorfromDataBase.setCod(resultSet.getInt(1));
+				directorfromDataBase.setName(resultSet.getString(2));
+				listDirector.add(directorfromDataBase);
 			}
-
 		} catch (SQLException e) {
-			e.printStackTrace();
 			throw new RuntimeException(e);
 		} finally {
 			manager.close(preparedStatement);
 			manager.close(conn);
 		}
-		return list;
+		return listDirector;
+	}
+	
+	public Director filterAllDirector(String name) {
+		Connection conn = manager.open(jdbcUrl);
+		PreparedStatement preparedStatement = null;
+		Director director = null;
+		try {
+			preparedStatement = conn.prepareStatement("SELECT DIRECTOR.NAME" + 
+					" FROM (((ACTOR" + 
+					" INNER JOIN FILMACTOR ON FILMACTOR.CODACTOR = ACTOR.COD)" + 
+					" INNER JOIN FILM ON FILM.COD = FILMACTOR.CODFILM)" + 
+					" INNER JOIN DIRECTOR ON DIRECTOR.COD = FILM.CODOWNER)" + 
+					" WHERE ACTOR.NAME = (?)");
+			preparedStatement.setString(1, name);
+			ResultSet resultSet = preparedStatement.executeQuery();
+			while (resultSet.next()) {
+				Director directorfromDataBase = new Director();
+				directorfromDataBase.setName(resultSet.getString(1));
+				director = directorfromDataBase;
+			}			
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		} finally {
+			manager.close(preparedStatement);
+			manager.close(conn);
+		}
+		return director;
 	}
 
 }

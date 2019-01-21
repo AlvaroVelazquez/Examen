@@ -7,40 +7,40 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+
 import es.salesianos.connection.AbstractConnection;
 import es.salesianos.connection.H2Connection;
-import es.salesianos.model.Pelicula;
+import es.salesianos.model.Film;
 
 public class FilmRepository {
+
+	
 	private static final String jdbcUrl = "jdbc:h2:file:./src/main/resources/test";
 	AbstractConnection manager = new H2Connection();
-
-	public void insert(Pelicula pelicula) {
+	
+	public void insert(Film film) {
 		Connection conn = manager.open(jdbcUrl);
 		PreparedStatement preparedStatement = null;
 		try {
 			preparedStatement = conn.prepareStatement("INSERT INTO FILM (tittle)" + "VALUES (?)");
-			preparedStatement.setString(1, pelicula.getTitle());
+			preparedStatement.setString(1, film.getTitle());
 			preparedStatement.executeUpdate();
 		} catch (SQLException e) {
-			e.printStackTrace();
 			throw new RuntimeException(e);
 		} finally {
 			manager.close(preparedStatement);
 			manager.close(conn);
 		}
-
 	}
-
-	public void delete(Pelicula pelicula) {
+	
+	public void delete(Film film) {
 		Connection conn = manager.open(jdbcUrl);
 		PreparedStatement preparedStatement = null;
 		try {
 			preparedStatement = conn.prepareStatement("DELETE FROM FILM WHERE cod=?");
-			preparedStatement.setInt(1, pelicula.getCod());
+			preparedStatement.setInt(1, film.getCod());
 			preparedStatement.executeUpdate();
 		} catch (SQLException e) {
-			e.printStackTrace();
 			throw new RuntimeException(e);
 		} finally {
 			manager.close(preparedStatement);
@@ -48,29 +48,28 @@ public class FilmRepository {
 		}
 
 	}
-
-	public List<Pelicula> selectAllPelicula() {
+	
+	public List<Film> selectAllFilm() {
 		Connection conn = manager.open(jdbcUrl);
 		PreparedStatement preparedStatement = null;
-		List<Pelicula> list = new ArrayList<Pelicula>();
+		List<Film> listFilm = new ArrayList<Film>();
 		try {
 			preparedStatement = conn.prepareStatement("SELECT * FROM FILM");
 			ResultSet resultSet = preparedStatement.executeQuery();
 			while (resultSet.next()) {
-				Pelicula director = new Pelicula();
-				director.setCod(resultSet.getInt(1));
-				director.setTitle(resultSet.getString(2));
-				director.setCodDirector(resultSet.getInt(3));
-				list.add(director);
+				Film filmfromDataBase = new Film();
+				filmfromDataBase.setCod(resultSet.getInt(1));
+				filmfromDataBase.setTitle(resultSet.getString(2));
+				filmfromDataBase.setCodDirector(resultSet.getInt(3));
+				listFilm.add(filmfromDataBase);
 			}
-
 		} catch (SQLException e) {
-			e.printStackTrace();
 			throw new RuntimeException(e);
 		} finally {
 			manager.close(preparedStatement);
 			manager.close(conn);
 		}
-		return list;
+		return listFilm;
 	}
+	
 }

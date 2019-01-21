@@ -7,7 +7,7 @@
 
 
 <%
-	List<Pelicula> listAllDirectores = (List<Pelicula>) request.getAttribute("listAllDirectores");
+	List<Film> listAllDirectores = (List<Film>) request.getAttribute("listAllDirectores");
 %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -38,7 +38,7 @@
 			<c:forEach var="director" items="${listAllDirectores}">
 				<tr>
 					<td><c:out value="${director.cod}" /></td>
-					<td><c:out value="${director.nombre}" /></td>
+					<td><c:out value="${director.name}" /></td>
 					<td><a href="/director?cod=${director.cod}">Delete</a></td>
 
 

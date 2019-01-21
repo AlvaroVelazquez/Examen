@@ -23,10 +23,10 @@
 		<a href="/searchActor">Search Actors by Date</a>
 	</div>
 	<div>
-		<a href="/characters">Film actors (Characters)</a>
+		<a href="/roleSearcher">Film actors (Characters)</a>
 	</div>
 	<div>
-		<a href="/directoractor">Directors by actors</a>
+		<a href="/searchActorInfo">Directors by actors</a>
 	</div>
 </body>
 </html>

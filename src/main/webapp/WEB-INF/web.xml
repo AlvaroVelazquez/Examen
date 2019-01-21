@@ -41,22 +41,27 @@
 		</servlet-class>
 	</servlet>
 	<servlet>
-		<servlet-name>SearchInfoCharactersServlet</servlet-name>
-		<servlet-class>es.salesianos.servlet.SearchInfoCharactersServlet
+		<servlet-name>CharacterServlet</servlet-name>
+		<servlet-class>es.salesianos.servlet.CharacterServlet
+		</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>SearchActorInfoServlet</servlet-name>
+		<servlet-class>es.salesianos.servlet.SearchActorInfoServlet
 		</servlet-class>
 	</servlet>
 
 
 	<servlet-mapping>
-		<servlet-name>SearchInfoCharactersServlet</servlet-name>
-		<url-pattern>/directoractor</url-pattern>
+		<servlet-name>SearchActorInfoServlet</servlet-name>
+		<url-pattern>/searchActorInfo</url-pattern>
 	</servlet-mapping>
 
 	<servlet-mapping>
-		<servlet-name>SearchInfoCharactersServlet</servlet-name>
-		<url-pattern>/characters</url-pattern>
+		<servlet-name>CharacterServlet</servlet-name>
+		<url-pattern>/roleSearcher</url-pattern>
 	</servlet-mapping>
-
+	
 	<servlet-mapping>
 		<servlet-name>SearchActorServlet</servlet-name>
 		<url-pattern>/searchActor</url-pattern>

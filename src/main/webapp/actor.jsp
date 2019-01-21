@@ -38,7 +38,7 @@
 			<c:forEach var="actor" items="${listAllActores}">
 				<tr>
 					<td><c:out value="${actor.cod}" /></td>
-					<td><c:out value="${actor.nombre}" /></td>
+					<td><c:out value="${actor.name}" /></td>
 					<td><c:out value="${actor.year}" /></td>
 					<td><a href="/actor?cod=${actor.cod}">Delete</a></td>
 				</tr>

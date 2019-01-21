@@ -13,7 +13,7 @@
 <body>
 
 <%
-List<Pelicula> listAllPeliculas = (List<Pelicula>)request.getAttribute("listAllPeliculas");
+	List<Film> listAllPeliculas = (List<Film>)request.getAttribute("listAllPeliculas");
 %>
 	<form action="/pelicula" method="post">
 		<span>title:</span> <input type="text" name="title"> <br />

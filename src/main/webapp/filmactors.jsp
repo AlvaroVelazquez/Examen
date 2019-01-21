@@ -8,12 +8,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Associating films</title>
 </head>
 <body>
 
 	<%
-		List<Pelicula> listAllPeliculas = (List<Pelicula>) request.getAttribute("listAllPeliculas");
+		List<Film> listAllPeliculas = (List<Film>) request.getAttribute("listAllPeliculas");
 	%>
 
 

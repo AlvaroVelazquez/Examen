@@ -13,7 +13,7 @@ import es.salesianos.model.Film;
 import es.salesianos.model.assembler.PeliculaAssembler;
 import es.salesianos.service.FilmService;
 
-public class PeliculaServlet extends HttpServlet {
+public class FilmServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 
@@ -40,13 +40,13 @@ public class PeliculaServlet extends HttpServlet {
 	}
 
 	private void doAction(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
-		List<Film> selectAllPelicula = service.selectAllPelicula();
-		req.setAttribute("listAllPeliculas", selectAllPelicula);
+		List<Film> selectAllFilms = service.selectAllFilm();
+		req.setAttribute("listAllPeliculas", selectAllFilms);
 		redirect(req, resp);
 	}
 
 	protected void redirect(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
-		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/pelicula.jsp");
+		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/film.jsp");
 		dispatcher.forward(req, resp);
 	}
 }

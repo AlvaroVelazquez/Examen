@@ -29,7 +29,6 @@
 			<tr>
 				<td>Cod</td>
 				<td>Name</td>
-				<td></td>
 
 			</tr>
 		</thead>

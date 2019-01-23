@@ -42,7 +42,7 @@ public class FilmActorServlet extends HttpServlet {
 	}
 
 	private void doAction(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
-		List<Film> selectAllPelicula = service.selectAllPelicula();
+		List<Film> selectAllPelicula = service.selectAllFilm();
 		req.setAttribute("listAllPeliculas", selectAllPelicula);
 		redirect(req, resp);
 	}

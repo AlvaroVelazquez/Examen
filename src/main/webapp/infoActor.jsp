@@ -13,7 +13,7 @@
 <body>
 
 	<%
-	DtoActorFilm selectPeliculaActor = (DtoActorFilm)request.getAttribute("selectPeliculaActor");
+	DtoActorFilm selectFilmActor = (DtoActorFilm)request.getAttribute("selectFilmActor");
 	%>
 	
 	<form action="/characters" method="post">
@@ -34,9 +34,9 @@
 		</thead>
 		<tbody>
 				<tr>
-					<td><c:out value="${selectPeliculaActor.title}" /></td>
-					<td><c:out value="${selectPeliculaActor.name}" /></td>
-					<td><c:out value="${selectPeliculaActor.year}" /></td>
+					<td><c:out value="${selectFilmActor.title}" /></td>
+					<td><c:out value="${selectFilmActor.name}" /></td>
+					<td><c:out value="${selectFilmActor.year}" /></td>
 				</tr>
 		</tbody>
 	</table>

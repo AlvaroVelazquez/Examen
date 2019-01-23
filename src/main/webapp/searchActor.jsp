@@ -13,8 +13,8 @@
 <body>
 
 	<%
-		List<Actor> listAllActores = (List<Actor>) request.getAttribute("listAllActores");
-		request.getAttribute("codPelicula");
+		List<Actor> listAllActores = (List<Actor>) request.getAttribute("listAllActors");
+			request.getAttribute("codPelicula");
 	%>
 	<form action="/searchActor" method="get">
 		<span>From:</span> <input type="text" name="From"> <span>To:</span>
@@ -30,7 +30,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			<c:forEach var="actor" items="${listAllActores}">
+			<c:forEach var="actor" items="${listAllActors}">
 				<tr>
 					<td><c:out value="${actor.cod}" /></td>
 					<td><c:out value="${actor.name}" /></td>

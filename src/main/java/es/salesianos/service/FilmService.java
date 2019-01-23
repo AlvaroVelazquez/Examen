@@ -8,7 +8,7 @@ import es.salesianos.repository.FilmRepository;
 public class FilmService {
 	private FilmRepository repository = new FilmRepository();
 
-	public List<Film> selectAllPelicula() {
+	public List<Film> selectAllFilm() {
 		return repository.selectAllFilm();
 	}
 

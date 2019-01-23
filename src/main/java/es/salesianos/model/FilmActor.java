@@ -5,10 +5,10 @@ public class FilmActor {
 
 	private int cache;
 	private String role;
-	private int codPelicula;
+	private int codFilm;
 	private int codActor;
 	private Actor actor;
-	private Film pelicula;
+	private Film film;
 	
 	public int getCache() {
 		return cache;
@@ -23,10 +23,10 @@ public class FilmActor {
 		this.role = role;
 	}
 	public int getCodFilm() {
-		return codPelicula;
+		return codFilm;
 	}
-	public void setCodFilm(int codPelicula) {
-		this.codPelicula = codPelicula;
+	public void setCodFilm(int codFilm) {
+		this.codFilm = codFilm;
 	}
 	public int getCodActor() {
 		return codActor;
@@ -41,10 +41,10 @@ public class FilmActor {
 		this.actor = actor;
 	}
 	public Film getFilm() {
-		return pelicula;
+		return film;
 	}
 	public void setFilm(Film pelicula) {
-		this.pelicula = pelicula;
+		this.film = pelicula;
 	}
 	
 	

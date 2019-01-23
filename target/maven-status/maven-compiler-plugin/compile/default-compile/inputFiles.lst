@@ -1,6 +1,7 @@
 /home/alvaro/Examen/src/main/java/es/salesianos/model/Film.java
 /home/alvaro/Examen/src/main/java/es/salesianos/service/DirectorService.java
 /home/alvaro/Examen/src/main/java/es/salesianos/repository/FilmRepository.java
+/home/alvaro/Examen/src/main/java/es/salesianos/servlet/FilmServlet.java
 /home/alvaro/Examen/src/main/java/es/salesianos/servlet/SearchActorInfoServlet.java
 /home/alvaro/Examen/src/main/java/es/salesianos/servlet/CharacterServlet.java
 /home/alvaro/Examen/src/main/java/es/salesianos/repository/DirectorRepository.java
@@ -8,6 +9,7 @@
 /home/alvaro/Examen/src/main/java/es/salesianos/servlet/SearchActorServlet.java
 /home/alvaro/Examen/src/main/java/es/salesianos/repository/FilmActorRepository.java
 /home/alvaro/Examen/src/main/java/es/salesianos/service/FilmActorService.java
+/home/alvaro/Examen/src/main/java/es/salesianos/servlet/SearchInfoCharactersServlet.java
 /home/alvaro/Examen/src/main/java/es/salesianos/service/FilmService.java
 /home/alvaro/Examen/src/main/java/es/salesianos/connection/AbstractConnection.java
 /home/alvaro/Examen/src/main/java/es/salesianos/servlet/DirectorServlet.java
@@ -22,7 +24,6 @@
 /home/alvaro/Examen/src/main/java/es/salesianos/model/assembler/PeliculaAssembler.java
 /home/alvaro/Examen/src/main/java/es/salesianos/servlet/AssociateFilmServlet.java
 /home/alvaro/Examen/src/main/java/es/salesianos/connection/H2Connection.java
-/home/alvaro/Examen/src/main/java/es/salesianos/servlet/PeliculaServlet.java
 /home/alvaro/Examen/src/main/java/es/salesianos/servlet/ActorServlet.java
 /home/alvaro/Examen/src/main/java/es/salesianos/model/FilmActor.java
 /home/alvaro/Examen/src/main/java/es/salesianos/servlet/FillPeliculaActorServlet.java

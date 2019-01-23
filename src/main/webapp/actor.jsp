@@ -14,7 +14,7 @@
 <body>
 
 	<%
-		List<Actor> listAllActores = (List<Actor>) request.getAttribute("listAllActores");
+		List<Actor> listAllActores = (List<Actor>) request.getAttribute("listAllActors");
 	%>
 
 	<form action="/actor" method="post">

@@ -13,8 +13,8 @@
 <body>
 
 	<%
-		List<Actor> listAllActores = (List<Actor>) request.getAttribute("listAllActores");
-		request.getAttribute("codPelicula");
+		List<Alumno> listAllActores = (List<Alumno>) request.getAttribute("listAllActores");
+			request.getAttribute("codPelicula");
 	%>
 
 	<table border="1">

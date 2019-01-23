@@ -14,7 +14,7 @@
 		<a href="/director">Directors page</a>
 	</div>
 	<div>
-		<a href="/pelicula">Films page</a>
+		<a href="/film">Films page</a>
 	</div>
 	<div>
 		<a href="/filmactor">Associate films with actors</a>

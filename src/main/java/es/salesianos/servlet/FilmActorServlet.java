@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import es.salesianos.model.Actor;
 import es.salesianos.model.Film;
-import es.salesianos.model.assembler.PeliculaAssembler;
+import es.salesianos.model.assembler.FilmAssembler;
 import es.salesianos.service.FilmService;
 
 
@@ -24,8 +24,8 @@ public class FilmActorServlet extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		Film pelicula = PeliculaAssembler.assemblePeliculaFrom(req);
-		service.insert(pelicula);
+		Film film = FilmAssembler.assembleFilmFrom(req);
+		service.insert(film);
 		doAction(req, resp);
 	}
 
@@ -33,17 +33,17 @@ public class FilmActorServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String codString = req.getParameter("cod");
 		if(null != codString) {
-			Film pelicula = new Film();
+			Film film = new Film();
 			int cod = Integer.parseInt(codString);
-			pelicula.setCod(cod);
-			service.delete(pelicula);
+			film.setCod(cod);
+			service.delete(film);
 		}
 		doAction(req, resp);
 	}
 
 	private void doAction(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
-		List<Film> selectAllPelicula = service.selectAllFilm();
-		req.setAttribute("listAllPeliculas", selectAllPelicula);
+		List<Film> selectAllFilms = service.selectAllFilm();
+		req.setAttribute("listAllFilms", selectAllFilms);
 		redirect(req, resp);
 	}
 

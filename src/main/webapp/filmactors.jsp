@@ -12,7 +12,7 @@
 <body>
 
 	<%
-		List<Film> listAllPeliculas = (List<Film>) request.getAttribute("listAllPeliculas");
+		List<Film> listAllFilms = (List<Film>) request.getAttribute("listAllFilms");
 	%>
 
 
@@ -26,11 +26,11 @@
 			</tr>
 		</thead>
 		<tbody>
-			<c:forEach var="pelicula" items="${listAllPeliculas}">
+			<c:forEach var="film" items="${listAllFilms}">
 				<tr>
-					<td><c:out value="${pelicula.cod}" /></td>
-					<td><c:out value="${pelicula.title}" /></td>
-					<td><a href="/associateFilm?cod=${pelicula.cod}">Associate</a></td>
+					<td><c:out value="${film.cod}" /></td>
+					<td><c:out value="${film.title}" /></td>
+					<td><a href="/associateFilm?cod=${film.cod}">Associate</a></td>
 				</tr>
 			</c:forEach>
 		</tbody>

@@ -44,10 +44,10 @@ public class ActorServlet extends HttpServlet {
 			int From = Integer.parseInt(req.getParameter("From"));
 			int To = Integer.parseInt(req.getParameter("To"));
 			List<Actor> listAllActors = service.filterAllActor(From, To);
-			req.setAttribute("listAllActores", listAllActors);
+			req.setAttribute("listAllActors", listAllActors);
 		} else {
 			List<Actor> listAllActors = service.selectAllActor();
-			req.setAttribute("listAllActores", listAllActors);
+			req.setAttribute("listAllActors", listAllActors);
 		}
 		redirect(req, resp);
 	}

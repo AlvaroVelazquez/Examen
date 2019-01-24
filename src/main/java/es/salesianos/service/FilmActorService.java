@@ -13,8 +13,8 @@ public class FilmActorService {
 		return repository.filterAllFilmActor(role);
 	}
 	
-	public void insert(FilmActor peliculaActor) {
-		repository.insert(peliculaActor);;
+	public void insert(FilmActor filmActor) {
+		repository.insert(filmActor);;
 	}
 	
 }

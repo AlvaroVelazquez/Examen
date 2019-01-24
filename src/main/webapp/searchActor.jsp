@@ -13,7 +13,7 @@
 <body>
 
 	<%
-		List<Actor> listAllActores = (List<Actor>) request.getAttribute("listAllActors");
+		List<Actor> listAllActors = (List<Actor>) request.getAttribute("listAllActors");
 			request.getAttribute("codPelicula");
 	%>
 	<form action="/searchActor" method="get">

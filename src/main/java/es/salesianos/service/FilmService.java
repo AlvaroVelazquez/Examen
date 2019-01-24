@@ -12,13 +12,13 @@ public class FilmService {
 		return repository.selectAllFilm();
 	}
 
-	public void insert(Film pelicula) {
-		repository.insert(pelicula);
+	public void insert(Film film) {
+		repository.insert(film);
 
 	}
 
-	public void delete(Film pelicula) {
-		repository.delete(pelicula);
+	public void delete(Film film) {
+		repository.delete(film);
 
 	}
 }

@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import es.salesianos.model.Actor;
 import es.salesianos.model.Film;
-import es.salesianos.model.assembler.PeliculaAssembler;
+import es.salesianos.model.assembler.FilmAssembler;
 import es.salesianos.service.ActorService;
 import es.salesianos.service.FilmService;
 
@@ -26,22 +26,22 @@ public class AssociateFilmServlet extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		Film pelicula = PeliculaAssembler.assemblePeliculaFrom(req);
+		Film pelicula = FilmAssembler.assembleFilmFrom(req);
 		peliculaService.insert(pelicula);
 		doAction(req, resp);
 	}
  
 	@Override	
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		String codPelicula = req.getParameter("cod");
+		String codFilm = req.getParameter("cod");
 		
-		req.setAttribute("codPelicula", codPelicula);
+		req.setAttribute("codFilm", codFilm);
 		doAction(req, resp);
 	}
 
 	private void doAction(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
-		List<Actor> listAllActores = actorService.selectAllActor();
-		req.setAttribute("listAllActores", listAllActores);
+		List<Actor> listAllActors = actorService.selectAllActor();
+		req.setAttribute("listAllActors", listAllActors);
 		redirect(req, resp);
 	}
 

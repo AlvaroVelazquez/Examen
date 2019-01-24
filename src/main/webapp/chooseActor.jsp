@@ -13,8 +13,8 @@
 <body>
 
 	<%
-		List<Alumno> listAllActores = (List<Alumno>) request.getAttribute("listAllActores");
-			request.getAttribute("codPelicula");
+		List<Actor> listAllActores = (List<Actor>) request.getAttribute("listAllActors");
+			request.getAttribute("codFilm");
 	%>
 
 	<table border="1">
@@ -27,13 +27,13 @@
 			</tr>
 		</thead>
 		<tbody>
-			<c:forEach var="actor" items="${listAllActores}">
+			<c:forEach var="actor" items="${listAllActors}">
 				<tr>
 					<td><c:out value="${actor.cod}" /></td>
-					<td><c:out value="${actor.nombre}" /></td>
+					<td><c:out value="${actor.name}" /></td>
 					<td><c:out value="${actor.year}" /></td>
 					<td><a
-						href="/fillPeliculaActor?codActor=${actor.cod}&codPelicula=${codPelicula}">Seleccionar
+						href="/fillFilmActor?codActor=${actor.cod}&codFilm=${codFilm}">Choose
 							Actor</a></td>
 				</tr>
 			</c:forEach>

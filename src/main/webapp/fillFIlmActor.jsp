@@ -13,13 +13,13 @@
 <body>
 
 	<%
-		request.getAttribute("codPelicula");
+		request.getAttribute("codFilm");
 		request.getAttribute("codActor");
 	%>
 
 
 	<form
-		action="/fillPeliculaActor?codPelicula=${codPelicula}&codActor=${codActor}"
+		action="/fillFilmActor?codFilm=${codFIlm}&codActor=${codActor}"
 		method="post">
 		<span>Cache:</span> <input type="text" name="cache"> <br /> <span>Role:</span>
 		<input type="text" name="role"> <br /> <input type="submit">

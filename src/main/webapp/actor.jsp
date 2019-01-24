@@ -18,7 +18,7 @@
 	%>
 
 	<form action="/actor" method="post">
-		<span>name:</span> <input type="text" name="nombre"> <span>Year
+		<span>name:</span> <input type="text" name="name"> <span>Year
 			of birth:</span> <input type="text" name="year"> <br /> <input
 			type="submit">
 	</form>

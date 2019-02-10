@@ -24,7 +24,7 @@ public class FilmActorController {
 		return model;
 	}
 
-	@GetMapping(path = "/searchRole")
+	@GetMapping(path = "/roleSearcher")
 	public String getPagesearchRole() {
 		return "searchRole";
 	}

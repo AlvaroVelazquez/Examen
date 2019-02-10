@@ -29,7 +29,7 @@ public class DirectorController {
 		return "index";
 	}
 
-	@PostMapping(path = "/insertDirector")
+	@PostMapping(path = "/addDirector")
 	public String insertDirector(@RequestParam String name) {
 		Director director = new Director();
 		director.setName(name);

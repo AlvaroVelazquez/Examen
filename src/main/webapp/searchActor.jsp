@@ -12,38 +12,30 @@
 </head>
 <body>
 
-	<%
-		List<Actor> listAllActors = (List<Actor>) request.getAttribute("listAllActors");
-			request.getAttribute("codPelicula");
-	%>
-	<form action="/searchActor" method="get">
-		<span>From:</span> <input type="text" name="From"> <span>To:</span>
-		<input type="text" name="To"> <input type="submit">
+
+	<form action="/searchActor" method="post">
+		<span>Search Actor: <input type="text" name="name"></span> <br />
+		<input type="submit">
 	</form>
+	<br />
+	<br />
 
 	<table border="1">
 		<thead>
 			<tr>
-				<td>Cod Actor</td>
-				<td>name</td>
-				<td>year</td>
+				<td>Director</td>
 			</tr>
 		</thead>
 		<tbody>
-			<c:forEach var="actor" items="${listAllActors}">
-				<tr>
-					<td><c:out value="${actor.cod}" /></td>
-					<td><c:out value="${actor.name}" /></td>
-					<td><c:out value="${actor.year}" /></td>
-				</tr>
-			</c:forEach>
+			<tr>
+				<c:forEach var="name" items="${listFilterDirector.name}">
+					<tr>
+						<td><c:out value="${name}" /></td>
+					</tr>
+				</c:forEach>
+			</tr>
 		</tbody>
 	</table>
-	<br>
-	<div>
-		<a href="index.jsp">Return to index</a>
-	</div>
-</body>	
 
 
 </body>

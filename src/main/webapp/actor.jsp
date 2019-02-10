@@ -23,6 +23,14 @@
 	<br />
 	<br />
 	<br />
+	<form action="/filterActor" method="get">
+		<span>From:</span>
+		<input type="text" name="beginDate">
+		<span>To:</span>
+		<input type="text" name="endDate">
+		<input type="submit">
+	</form>
+	
 	<table border="1">
 		<thead>
 			<tr>
@@ -33,12 +41,12 @@
 			</tr>
 		</thead>
 		<tbody>
-			<c:forEach var="actor" items="${listAllActores}">
+			<c:forEach var="actor" items="${listAllActors}">
 				<tr>
 					<td><c:out value="${actor.cod}" /></td>
 					<td><c:out value="${actor.name}" /></td>
 					<td><c:out value="${actor.year}" /></td>
-					<td><a href="/deletActor?cod=${actor.cod}">Delete</a></td>
+					<td><a href="/deleteActor?cod=${actor.cod}">Delete</a></td>
 				</tr>
 			</c:forEach>
 		</tbody>

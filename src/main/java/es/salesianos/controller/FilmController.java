@@ -29,7 +29,7 @@ public class FilmController {
 		return "index";
 	}
 
-	@PostMapping(path = "/insertFilm")
+	@PostMapping(path = "/addFilm")
 	public String insertFilm(@RequestParam String title) {
 		Film film = new Film();
 		film.setTitle(title);

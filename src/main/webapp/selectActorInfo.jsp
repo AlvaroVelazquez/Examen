@@ -12,37 +12,26 @@
 </head>
 <body>
 
-	<%
-		Director listFilterDirector = (Director) request.getAttribute("listFilterDirector");
-	%>
-
-	<form action="/searchActorInfo" method="post">
-		<span>Search Actor: <input type="text" name="name"></span> <br />
-		<input type="submit">
-	</form>
-	<br />
-	<br />
-
 	<table border="1">
 		<thead>
 			<tr>
-				<td>Director</td>
+				<td>Cod Actor</td>
+				<td>name</td>
+				<td>year</td>
+				<td>Select</td>
 			</tr>
 		</thead>
 		<tbody>
-			<tr>
-				<c:forEach var="name" items="${listFilterDirector.name}">
-					<tr>
-						<td><c:out value="${name}" /></td>
-					</tr>
-				</c:forEach>
-			</tr>
+			<c:forEach var="actor" items="${listAllActors}">
+				<tr>
+					<td><c:out value="${actor.cod}" /></td>
+					<td><c:out value="${actor.name}" /></td>
+					<td><c:out value="${actor.year}" /></td>
+					<td><a href="/fillFilmActor?codActor=${actor.cod}&codFilm=${codFilm}">Select Actor</a></td>
+				</tr>
+			</c:forEach>
 		</tbody>
 	</table>
-	<div>
-		<a href="index.jsp">Return to index</a>
-	</div>
-
 
 </body>
 </html>

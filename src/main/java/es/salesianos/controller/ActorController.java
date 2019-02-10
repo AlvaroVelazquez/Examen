@@ -30,13 +30,13 @@ public class ActorController {
 	}
 
 	@GetMapping(path = "/filterActor")
-	public ModelAndView filterActor(@RequestParam Integer beginDate, @RequestParam Integer endDate) {
+	public ModelAndView filterActor(@RequestParam Integer From, @RequestParam Integer To) {
 		ModelAndView model = new ModelAndView("actor");
-		model.addObject("listAllActors", service.filterAllActor(beginDate, endDate));
+		model.addObject("listAllActors", service.filterAllActor(From, To));
 		return model;
 	}
 
-	@PostMapping(path = "/insertActor")
+	@PostMapping(path = "/addActor")
 	public String insertActor(@RequestParam String name, @RequestParam Integer year) {
 		Actor actor = new Actor();
 		actor.setName(name);

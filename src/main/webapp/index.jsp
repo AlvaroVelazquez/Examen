@@ -26,7 +26,7 @@
 		<a href="/roleSearcher">Film actors (Characters)</a>
 	</div>
 	<div>
-		<a href="/searchActorInfo">Directors by actors</a>
+		<a href="/searchActorInfo">Search directors by actors</a>
 	</div>
 </body>
 </html>

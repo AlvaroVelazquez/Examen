@@ -12,11 +12,8 @@
 </head>
 <body>
 
-	<%
-		DtoActorFilm selectFilmActor = (DtoActorFilm) request.getAttribute("selectFilmActor");
-	%>
-
-	<form action="/roleSearcher" method="post">
+	
+	<form action="/filterRole" method="post">
 		<span>Search by role: <input type="text" name="role"></span> <br />
 		<input type="submit">
 	</form>

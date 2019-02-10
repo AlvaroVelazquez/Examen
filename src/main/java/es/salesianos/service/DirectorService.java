@@ -2,11 +2,15 @@ package es.salesianos.service;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import es.salesianos.model.Director;
 import es.salesianos.repository.DirectorRepository;
 
+@Service
 public class DirectorService {
-	
+	@Autowired
 	DirectorRepository repository = new DirectorRepository();
 	
 	public List<Director> selectAllDirector() {

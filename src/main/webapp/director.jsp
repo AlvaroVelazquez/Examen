@@ -6,9 +6,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 
-<%
-	List<Film> listAllDirectors = (List<Film>) request.getAttribute("listAllDirectors");
-%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -17,7 +14,7 @@
 <title>Adding directors</title>
 </head>
 <body>
-	<form action="/director" method="post">
+	<form action="/addDirector" method="post">
 		<span>name:</span> <input type="text" name="name"> <br /> <input
 			type="submit">
 	</form>
@@ -38,7 +35,7 @@
 				<tr>
 					<td><c:out value="${director.cod}" /></td>
 					<td><c:out value="${director.name}" /></td>
-					<td><a href="/director?cod=${director.cod}">Delete</a></td>
+					<td><a href="/deleteDirector?cod=${director.cod}">Delete</a></td>
 
 
 				</tr>
